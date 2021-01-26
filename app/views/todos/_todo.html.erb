@@ -1,0 +1,10 @@
+<%= turbo_frame_tag dom_id(todo) do %>
+  <div class="card">
+    <div class="card-body <%= todo.completed ? 'completed' : 'not-completed' %>">
+      <%= todo.title %><br>
+      <div class="btn-group float-right">
+        <%= link_to "Complete", update_completed_path(id: todo.id, todo: todo), class: 'btn btn-secondary' %>
+      </div>
+    </div>
+  </div>
+<% end %>
